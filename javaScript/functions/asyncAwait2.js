@@ -12,8 +12,11 @@ waitForPeriodOfTimeWithPromise(1500) // function with the promise.
 .then(() => waitForPeriodOfTimeWithPromise(2000))
 .then(() => writeSomethingOnPage())
 .then(() => waitForPeriodOfTimeWithPromise(2200))
-.then(() => turnPagePink());
-
+.then(() => turnPagePink())
+.catch((error) => {
+    // here's what i want to do with my error
+    console.error(error);
+})
 
 // the page to turn blue after 1500 milliseconds
 
